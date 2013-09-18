@@ -8,11 +8,10 @@ Gem::Specification.new do |spec|
   spec.version       = ApontadorOauth2::VERSION
   spec.authors       = ["edereduardo"]
   spec.email         = ["eder.esilva@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Apontador Oauth2 is a helper for help requests to Api of Apontador}
+  spec.summary       = %q{A tool for authenticator with Oauth2 of Apontador}
   spec.homepage      = "http://edereduardo.wordpress.com/"
   spec.license       = "MIT"
-
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
