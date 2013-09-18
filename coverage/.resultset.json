@@ -1,0 +1,28 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/edereduardo/Projetos/apontador_oauth2/lib/apontador_oauth2.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/edereduardo/Projetos/apontador_oauth2/lib/apontador_oauth2/version.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/edereduardo/Projetos/apontador_oauth2/lib/apontador_oauth2/client.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1379480618
+  }
+}
