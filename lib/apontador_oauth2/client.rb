@@ -3,7 +3,7 @@ require 'net/http'
 require 'net/https'
 require 'faraday'
 require 'json'
-module  ApontadorOAuth2
+module  ApontadorOauth2
   class Client
     class << self
       attr_accessor :options, :token
