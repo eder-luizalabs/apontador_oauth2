@@ -3,14 +3,11 @@ require 'net/http'
 require 'net/https'
 require 'faraday'
 require 'json'
-module  ApontadorOauth2
+module  ApontadorOauth2 
   class Client
-    class << self
-      attr_accessor :options, :token
-    end
-    
-    def initialize(options, &block)
-       options_for_oauth = {
+    attr_accessor :token, :options
+    def initialize(options)
+      @options = {
         :url             => options[:url],
         :client_id       => options[:client_id] ,
         :client_secret   => options[:client_secret],
@@ -18,26 +15,25 @@ module  ApontadorOauth2
         :username        => "",
         :password        => "",
       }.merge!(options) 
-      Client.options = options_for_oauth
-      Client.request
-    end
-
-    def self.request
-      url = URI.parse(Client.options[:url])
-      connection  = Faraday.new(:url => url)
-      response = connection.post 'oauth/token',  Client.credentials
-      Client.token = JSON.parse(response.body)['access_token']
+      request
     end
     
-    def self.credentials
-      { 'client_id'     => Client.options[:client_id],
-        'client_secret' => Client.options[:client_secret],
-        'grant_type'    => Client.options[:grant_type]
+    def request
+      url = URI.parse(@options[:url])
+      connection  = Faraday.new(:url => url)
+      response = connection.post 'oauth/token', credentials
+      @token = JSON.parse(response.body)['access_token']
+    end
+    
+    def credentials
+      { 'client_id'     => @options[:client_id],
+        'client_secret' => @options[:client_secret],
+        'grant_type'    => @options[:grant_type]
       }
     end
     
-    def get_token
-      Client.token
+    def user_information
+      ApontadorOauth2::User.new.get_information(self)
     end
   end
 end

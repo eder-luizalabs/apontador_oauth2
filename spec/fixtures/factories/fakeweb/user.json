@@ -1,0 +1,29 @@
+{ "user" : { "address" : { "city" : "Sao Paulo",
+          "number" : "0",
+          "state" : " SP",
+          "street" : "CENTRO DA CIDADE"
+        },
+      "email" : "jhondoe",
+      "id" : "12345",
+      "link" : { "rel" : "self",
+          "uri" : "https://api.apontador.com.br/v2/users/12345"
+        },
+      "name" : "Jhon Doe",
+      "photos" : { "large" : "https://graph.facebook.com/12345/picture?type=large",
+          "medium" : "https://graph.facebook.com/12345/picture?type=normal",
+          "original" : "https://graph.facebook.com/12345/picture?type=large",
+          "small" : "https://graph.facebook.com/12345/picture?type=square"
+        },
+      "profile" : { "facebookUrl" : "Jhon Doe",
+          "newsletter" : true,
+          "relationship" : 1,
+          "showPhone" : false,
+          "twitterUrl" : "jhondoe"
+        },
+      "statistics" : { "checkins" : 42,
+          "photos" : 4,
+          "places" : 2,
+          "reviews" : 15
+        }
+    }
+}

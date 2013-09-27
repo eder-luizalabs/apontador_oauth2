@@ -5,3 +5,6 @@ FakeWeb.register_uri(:post, "https://api.apontador.com.br/v2/oauth/token",
                                      :grant_type => 'client_credentials',
                                      :username => nil,
                                      :password => nil})
+
+FakeWeb.register_uri(:get, "https://api.apontador.com.br/v2/users/me",
+                     :body =>  File.read("spec/fixtures/factories/fakeweb/user.json"))
