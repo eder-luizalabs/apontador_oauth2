@@ -8,13 +8,10 @@ module  ApontadorOauth2
     attr_accessor :token, :options
     def initialize(options)
       @options = {
-        :url             => options[:url],
-        :client_id       => options[:client_id] ,
-        :client_secret   => options[:client_secret],
         :grant_type      => "client_credentials",
         :username        => "",
         :password        => "",
-      }.merge!(options) 
+      }.merge!(options)
       request
     end
     
@@ -28,7 +25,9 @@ module  ApontadorOauth2
     def credentials
       { 'client_id'     => @options[:client_id],
         'client_secret' => @options[:client_secret],
-        'grant_type'    => @options[:grant_type]
+        'grant_type'    => @options[:grant_type],
+        'username'      => @options[:username],
+        'password'      => @options[:password]
       }
     end
     
