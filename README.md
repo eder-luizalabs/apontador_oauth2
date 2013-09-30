@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/eder/apontador_oauth2.png?branch=master)](https://travis-ci.org/eder/apontador_oauth2)
 # ApontadorOauth2
 
 TODO: Write a gem description
