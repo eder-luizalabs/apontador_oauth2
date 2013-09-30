@@ -7,8 +7,11 @@ module ApontadorOauth2
         req.headers['Content-Type']  =  "application/json"
         req.headers['Authorization'] =  "Bearer #{options[:token]}"
         req.headers['Accept']        =  "application/json"
+         req.body = {:user => { :name     => options[:name], 
+                                :email    => options[:email], 
+                                :password => options[:password]}}.to_json
       end
-      JSON.parse(res.body)
+      res
     end
   end
 end

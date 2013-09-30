@@ -21,18 +21,5 @@ module  ApontadorOauth2
       response = connection.post 'oauth/token', @options
       @token = JSON.parse(response.body)['access_token']
     end
-    
-    def credentials
-      { 'client_id'     => @options[:client_id],
-        'client_secret' => @options[:client_secret],
-        'grant_type'    => @options[:grant_type],
-        'username'      => @options[:username],
-        'password'      => @options[:password]
-      }
-    end
-    
-    def user_information
-      ApontadorOauth2::User.new.get_information(self)
-    end
   end
 end
