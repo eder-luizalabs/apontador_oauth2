@@ -16,11 +16,7 @@ module FakeData
   end
 
   def fake_info_user
-    stub_request(:get, "https://api.apontador.com.br/v2/users/me").with(:headers => {'Accept'=>'application/json', 
-                                                                        'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 
-                                                                        'Authorization'=>'Bearer token-authenticate-12345678910', 
-                                                                        'Content-Type'=>'application/json', 'User-Agent'=>'Faraday v0.8.8'
-    }).to_return(:status => 200, :body => File.read("spec/fixtures/factories/user.json"), :headers => {})
+    stub_request(:get, "https://api.apontador.com.br/v2/users/me").with(:headers => {'Accept'=>'application/json', 'Authorization'=>'Bearer token-authenticate-12345678910', 'Content-Type'=>'application/json', 'User-Agent'=>'Faraday v0.8.8'}).to_return(:status => 200, :body => File.read("spec/fixtures/factories/user.json"), :headers => {})
   end
 
   def fake_register_user
