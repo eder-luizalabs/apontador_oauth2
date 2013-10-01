@@ -11,15 +11,19 @@ describe "Interation with data of user" do
       user.user_information['user'].should_not be_nil
     end
   end
-
   context "Register user" do
+    before do
+      fake_token_without_authentication
+       fake_register_user
+    end
     it "create new user" do
-      fake_register_user
-      new_user = ApontadorOauth2::User.new
-      new_user.register_user_in_apontador(:name     => "jhon Doe",
-                                          :email    => "jhondoe@example.com",
-                                          :password => "jhondoe12345"
-                                         ).should be_nil
+      conf = {:name     => "jhon Doe", 
+              :email    => "jhondoe@example.com",
+              :password => "jhondoe12345"
+             }
+
+      new_user = ApontadorOauth2::User.new({:token => logged_with_credentials.token})
+      new_user.register_user_in_apontador(conf).should be_nil
     end
   end
 end

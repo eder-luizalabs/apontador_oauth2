@@ -9,4 +9,13 @@ module Login
                 }
     ApontadorOauth2::Client.new(credentials)
   end
+  
+  def logged_with_credentials
+    credentials = {:client_id     => "12345",
+                     :client_secret => "54321",
+                     :url           => "https://api.apontador.com.br/v2/"
+                    }
+    ApontadorOauth2::Client.new(credentials)
+  end
+
 end

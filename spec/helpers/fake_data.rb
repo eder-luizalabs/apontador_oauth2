@@ -24,9 +24,7 @@ module FakeData
   end
 
   def fake_register_user
-    stub_request(:get, "https://api.apontador.com.br/v2/users/").
-         with(:body => "{\"user\":{\"name\":\"jhon Doe\",\"email\":\"jhondoe@example.com\",\"password\":\"jhondoe12345\"}}",
-              :headers => {'Accept'=>'application/json', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'Authorization'=>'Bearer', 'Content-Type'=>'application/json', 'User-Agent'=>'Faraday v0.8.8'}).
-         to_return(:status => 201, :body => "", :headers => {})
+    stub_request(:get, "https://api.apontador.com.br/v2/users").with(:body => "{\"user\":{\"name\":\"jhon Doe\",\"email\":\"jhondoe@example.com\",\"password\":\"jhondoe12345\"}}",
+              :headers => {'Accept'=>'application/json', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'Authorization'=>'Bearer token-12345678910', 'Content-Type'=>'application/json', 'User-Agent'=>'Faraday v0.8.8'}).to_return(:status => 201, :body => "", :headers => {})
   end
 end
