@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["eder.esilva@gmail.com"]
   spec.description   = %q{Apontador Oauth2 is a helper for help requests to Api of Apontador}
   spec.summary       = %q{A tool for authenticator with Oauth2 of Apontador}
-  spec.homepage      = "http://edereduardo.wordpress.com/"
+  spec.homepage      = "https://github.com/eder/apontador_oauth2"
   spec.license       = "MIT"
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
