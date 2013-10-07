@@ -17,7 +17,7 @@ Or install it yourself as:
 
 ## Usage Examples
  
-## Get Token with app trust
+Get Token with app trust:
 
  credentials = {:client_id     => "12345",
                      :client_secret => "54321",
