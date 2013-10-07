@@ -1,8 +1,6 @@
 [![Build Status](https://travis-ci.org/eder/apontador_oauth2.png?branch=master)](https://travis-ci.org/eder/apontador_oauth2)
 # ApontadorOauth2
-
-TODO: Write a gem description
-
+Ruby client for the OAuth 2.0 to site Apontador, still in process of development. 
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -17,9 +15,24 @@ Or install it yourself as:
 
     $ gem install apontador_oauth2
 
-## Usage
+## Usage Examples
+ 
+## Get Token with app trust
 
-TODO: Write usage instructions here
+ credentials = {:client_id     => "12345",
+                     :client_secret => "54321",
+                     :url           => "https://api.apontador.com.br/v2/"
+                    }
+  client =  ApontadorOauth2::Client.new(credentials)
+
+  client.token
+ #=> token-valid
+##Supported Ruby Versions
+
+This library aims to support and is tested against the following Ruby implementations:
+Ruby 1.9.2
+Ruby 1.9.3
+Ruby 2.0.0
 
 ## Contributing
 
