@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/eder/apontador_oauth2.png?branch=master)](https://travis-ci.org/eder/apontador_oauth2)
+[![Gem Version](https://badge.fury.io/rb/apontador_oauth2.png)](http://badge.fury.io/rb/apontador_oauth2)
 # ApontadorOauth2
 Ruby client for the OAuth 2.0 to site Apontador, still in process of development. 
 ## Installation
@@ -29,7 +30,7 @@ client.token
 #=> one-number-token-valid
 ```
 
-Get token with user authenticate:
+Get token with user authentication:
 ``` ruby
 credentials = {:client_id   => "12345", :client_secret => "54321",
                :url         => "https://api.apontador.com.br/v2/",
