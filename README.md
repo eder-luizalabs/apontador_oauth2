@@ -19,14 +19,13 @@ Or install it yourself as:
  
 Get Token with app trust:
 
- credentials = {:client_id     => "12345",
-                     :client_secret => "54321",
-                     :url           => "https://api.apontador.com.br/v2/"
-                    }
-  client =  ApontadorOauth2::Client.new(credentials)
+    credentials = { :client_id     => "12345",
+                    :client_secret => "54321",
+                    :url           => "https://api.apontador.com.br/v2/"}
+    client      =  ApontadorOauth2::Client.new(credentials)
 
-  client.token
- #=> token-valid
+    client.token
+    #=> one-number-token-valid
 ##Supported Ruby Versions
 
 This library aims to support and is tested against the following Ruby implementations:
