@@ -19,12 +19,26 @@ Or install it yourself as:
  
 Get Token with app trust:
 ```ruby
-client =  ApontadorOauth2::Client.new({:client_id => "12345", 
-                                       :client_secret => "54321", 
-                                       :url => "https://api.apontador.com.br/v2/"})
+client = ApontadorOauth2::Client.new({:client_id     => "12345", 
+                                      :client_secret => "54321", 
+                                      :url           => "https://api.apontador.com.br/v2/"
+                                     })
 
 client.token
 #=> one-number-token-valid
+```
+
+Get token with user authenticate:
+``` ruby
+client = ApontadorOauth2::Client.new({:client_id   => "12345",
+                                      :client_secret => "54321",
+                                      :url           => "https://api.apontador.com.br/v2/",
+                                      :username      => "jhondoe@example.com",
+                                      :password      => "123456",
+                                      :grant_type    => "password"
+                                    })
+client.token
+#=> one-number-token-valid-authenticate-be-user
 ```
 ##Supported Ruby Versions
 
