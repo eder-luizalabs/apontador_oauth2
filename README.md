@@ -42,6 +42,23 @@ client = ApontadorOauth2::Client.new(credentials)
 client.token
 #=> one-number-token-valid-authenticate-be-user
 ```
+Register new user with token app of trust:
+``` ruby
+credentials = {:client_id => "12345", :client_secret => "54321", 
+               :url       => "https://api.apontador.com.br/v2/"
+              }
+client = ApontadorOauth2::Client.new(credentials)
+
+user = {:name     => "jhon Doe", 
+        :email    => "jhondoe@example.com",
+        :password => "jhondoe12345"
+        }
+
+new_user = ApontadorOauth2::User.new({:token => client.token})
+new_user.register_user_in_apontador(user)
+#=> nil
+```
+
 ##Supported Ruby Versions
 
 This library aims to support and is tested against the following Ruby implementations:
