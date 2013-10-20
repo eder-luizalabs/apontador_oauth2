@@ -48,13 +48,8 @@ credentials = {:client_id => "12345", :client_secret => "54321",
                :url       => "https://api.apontador.com.br/v2/"
               }
 client = ApontadorOauth2::Client.new(credentials)
-
-user = {:name     => "jhon Doe", 
-        :email    => "jhondoe@example.com",
-        :password => "jhondoe12345"
-        }
-
 new_user = ApontadorOauth2::User.new({:token => client.token})
+user = {:name => "jhon Doe", :email => "jhondoe@example.com", :password => "jhondoe12345"}
 new_user.register_user_in_apontador(user)
 #=> nil
 ```
