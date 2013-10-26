@@ -21,9 +21,10 @@ Or install it yourself as:
 Get Token with app trust:
 ```ruby
 
-credentials = {:client_id => "12345", :client_secret => "54321", 
-               :url       => "https://api.apontador.com.br/v2/"
-              }
+credentials = {
+  :client_id => "12345", :client_secret => "54321", 
+  :url       => "https://api.apontador.com.br/v2/"
+}
 client = ApontadorOauth2::Client.new(credentials)
 
 client.token
@@ -32,23 +33,26 @@ client.token
 
 Get token with user authentication:
 ``` ruby
-credentials = {:client_id   => "12345", :client_secret => "54321",
-               :url         => "https://api.apontador.com.br/v2/",
-               :username      => "jhondoe@example.com",
-               :password      => "123456",
-               :grant_type    => "password"
-              }
+credentials = {
+  :client_id    => "12345", :client_secret => "54321",
+  :url          => "https://api.apontador.com.br/v2/",
+  :username     => "jhondoe@example.com",
+  :password     => "123456",
+  :grant_type   => "password"
+}
 client = ApontadorOauth2::Client.new(credentials)
 client.token
 #=> one-number-token-valid-authenticate-be-user
 ```
 Register new user with token app of trust:
 ``` ruby
-credentials = {:client_id => "12345", :client_secret => "54321", 
-               :url       => "https://api.apontador.com.br/v2/"
-              }
+credentials = {
+  :client_id => "12345", :client_secret => "54321", 
+  :url       => "https://api.apontador.com.br/v2/"
+}
 client = ApontadorOauth2::Client.new(credentials)
 new_user = ApontadorOauth2::User.new({:token => client.token})
+
 user = {:name => "jhon Doe", :email => "jhondoe@example.com", :password => "jhondoe12345"}
 new_user.register_user_in_apontador(user)
 #=> nil
