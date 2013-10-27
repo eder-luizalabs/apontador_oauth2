@@ -31,7 +31,7 @@ client.token
 #=> one-number-token-valid
 ```
 
-Get token with user authentication:
+Get token with user authenticated:
 ``` ruby
 credentials = {
   :client_id    => "12345", :client_secret => "54321",
