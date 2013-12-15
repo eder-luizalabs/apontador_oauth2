@@ -12,7 +12,7 @@ module  ApontadorOauth2
 
     def register_user_in_apontador(options)
       res = request( {:path => "users", :user => options}.merge(@options))
-      JSON.parse(res.body) unless res.status == 201
+      json(res.body) if res.status != 201
     end
     
     def request(options)
