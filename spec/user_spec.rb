@@ -7,7 +7,7 @@ describe "Interation with data of user" do
     end  
     it "Grab User " do
       fake_info_user
-      user = ApontadorOauth2::User.new({:token => user_logged.token})
+      user = ApontadorOauth2::User.new({token: user_logged.token, url: "https://api.apontador.com.br/v2/" })
       user.user_information['user'].should_not be_nil
     end
   end
@@ -22,7 +22,7 @@ describe "Interation with data of user" do
               :password => "jhondoe12345"
              }
 
-      new_user = ApontadorOauth2::User.new({:token => logged_with_credentials.token})
+      new_user = ApontadorOauth2::User.new({token: logged_with_credentials.token, url: "https://api.apontador.com.br/v2/"})
       new_user.register_user_in_apontador(conf).should be_nil
     end
   end

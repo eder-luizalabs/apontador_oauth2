@@ -2,7 +2,7 @@ module  ApontadorOauth2
   attr_accessor :options
   class User
     def initialize(options={})
-      @options = options.merge!({:url => "https://api.apontador.com.br/v2/"})
+      @options = options
     end
     
     def user_information
