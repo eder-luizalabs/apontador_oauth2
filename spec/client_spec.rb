@@ -1,5 +1,5 @@
 require 'spec_helper'
-describe "With Client id  and Client Srecret valids" do
+describe "With Client id and Client Srecret valids" do
   context "Token" do
     before do
       fake_token_without_authentication

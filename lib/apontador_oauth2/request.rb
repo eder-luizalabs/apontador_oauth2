@@ -11,5 +11,9 @@ module ApontadorOauth2
       end
      res
     end
+    
+    def self.json(data)
+     JSON.parse(data)
+    end
   end
 end

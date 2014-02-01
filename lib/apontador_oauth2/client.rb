@@ -17,7 +17,7 @@ module  ApontadorOauth2
     private
     def request
       connection  = Faraday.new(:url => URI.parse(@options[:url]))
-      response = connection.post 'oauth/token', @options
+      response = connection.post '/v2/oauth/token', @options
       @token = JSON.parse(response.body)['access_token']
     end
   end
