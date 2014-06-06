@@ -18,7 +18,7 @@ Or install it yourself as:
 
 ## Usage Examples
  
-Get Token with app trust:
+Get Token with app trusted:
 ```ruby
 
 credentials = {
@@ -36,7 +36,7 @@ Get token with user authenticated:
 credentials = {
   :client_id    => "12345", :client_secret => "54321",
   :url          => "https://api.apontador.com.br/v2/",
-  :username     => "jhondoe@example.com",
+  :username     => "johndoe@example.com",
   :password     => "123456",
   :grant_type   => "password"
 }
@@ -53,7 +53,7 @@ credentials = {
 client = ApontadorOauth2::Client.new(credentials)
 new_user = ApontadorOauth2::User.new({:token => client.token})
 
-user = {:name => "jhon Doe", :email => "jhondoe@example.com", :password => "jhondoe12345"}
+user = {:name => "john doe", :email => "johndoe@example.com", :password => "johndoe12345"}
 new_user.register_user_in_apontador(user)
 #=> nil
 ```
